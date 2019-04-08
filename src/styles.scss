@@ -10,6 +10,7 @@ $tint: #f5f5f5;
 body{
   color: $shade1;
   background-color: $tint;
+  box-sizing: border-box;;
 }
 
 .container-fluid{
@@ -34,9 +35,6 @@ h3{
   h3{
     font-size: 1.25rem;
   }
-  .gridPicker.row button{
-    color: $tint;
-  }
 }
 
 /* Smartphones (portrait) ----------- */
@@ -44,8 +42,11 @@ h3{
   h3{
     font-size: 1.25rem;
   }
-  .gridPicker.row button{
-    color: $tint;
+}
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .gridPicker.row .matterInfoButton.col-xs-6{
+    margin-left: 22px;
   }
 }
 
