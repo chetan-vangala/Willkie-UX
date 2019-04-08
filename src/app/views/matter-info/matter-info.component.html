@@ -1,0 +1,18 @@
+<!-- I didn't see any particularly graphable trends in the data that was provided here,
+  so I just used this page as another card view. In an actual development situation I'd
+  reach out to the business stakeholders here for some input on what information they'd
+  like to see -->
+<section class="matterInfoPage">
+  <a href="javascript:void(0);" (click)="linkToHome()">back</a>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{{this.matterInfo['matter']}}</h5>
+      <section class="card-text">
+        <div>Closing Date: {{this.matterInfo['closingDate']}}</div>
+        <div>Current Budget: {{this.matterInfo['currentBudget']}}</div>
+        <div>Lead Attorney: {{this.matterInfo['leadAttorney']}}</div>
+        <div>Client Attorney: {{this.matterInfo['clientAttorney']}}</div>
+      </section>
+    </div>
+  </div>
+</section>

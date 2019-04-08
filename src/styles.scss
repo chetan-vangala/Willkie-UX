@@ -1,0 +1,138 @@
+$primary-color1: #3e2268;
+$primary-color2: #a3b5a0;
+$secondary-color: #ea6307;
+
+$shade1: #404040;
+$shade2: #606060;
+$shade3: #CCC;
+$tint: #f5f5f5;
+
+body{
+  color: $shade1;
+  background-color: $tint;
+}
+
+.container-fluid{
+  padding: 0 40px;
+}
+
+.header mat-toolbar{
+  background-color: $primary-color1;
+  padding-left: 30px;
+}
+
+.header mat-toolbar img{
+  height: 35px;
+}
+
+h3{
+  padding-top: 15px;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  h3{
+    font-size: 1.25rem;
+  }
+  .gridPicker.row button{
+    color: $tint;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  h3{
+    font-size: 1.25rem;
+  }
+  .gridPicker.row button{
+    color: $tint;
+  }
+}
+
+.footer{
+    padding: 1px 0px 30px 30px;
+    font-size: 12px;
+}
+.home .footer
+{
+	padding-left: 30px;
+}
+
+#BottomSection .footer
+{
+	padding-left: 0px;
+}
+.footer ul
+{
+	margin-bottom: 0px;
+  padding: 0px;
+}
+.footer:after{
+    display:block;
+    content:" ";
+    clear:both;
+}
+
+.footer li
+{
+    display:inline-block;
+    margin:0 6px;
+	  padding: 0;
+}
+
+.careersLanding .footer ul li:nth-child(2)
+{
+    margin-left: 0px !important;
+}
+
+.footer ul img:first-child
+{
+    display: none;
+}
+
+.footer li a{
+    font-weight: 700;
+    color: $primary-color1;
+}
+.footer img{
+    vertical-align:middle;
+}
+.footer .copyRight
+{
+    margin-left:6px;
+}
+
+kendo-grid {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.gridPicker.row{
+  width: 280px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: $primary-color2;
+  padding: 20px;
+}
+  .gridPicker .matterInfoButton{
+    margin-left: 24px;
+  }
+
+a.card.container-fluid{
+  margin-bottom: 10px;
+  color: $tint;
+  background-color: $shade1;
+}
+  a.card.container-fluid .card-text{
+    color: $secondary-color;
+  }
+
+section.matterInfoPage, section.clientInfoPage{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+  section.matterInfoPage .card{
+    margin-top: 10px;
+  }

@@ -1,0 +1,20 @@
+<!-- Similar to the matter info page, I could show much more detailed graphs
+    here, but I'm not sure exactly what trends would be useful for with this
+    set of sample data -->
+<section class="clientInfoPage">
+  <a href="javascript:void(0);" (click)="linkToHome()">back</a>
+  <h3>{{this.clientName}}</h3>
+  <kendo-chart>
+    <kendo-chart-series>
+      <kendo-chart-series-item
+          type="donut" [data]="this.clientBillingInfo"
+          categoryField="category" field="value">
+        <kendo-chart-series-item-labels
+          [content]="labelContent"
+          color="#fff" background="none">
+        </kendo-chart-series-item-labels>
+      </kendo-chart-series-item>
+    </kendo-chart-series>
+    <kendo-chart-legend position="bottom"></kendo-chart-legend>
+  </kendo-chart>
+</section>

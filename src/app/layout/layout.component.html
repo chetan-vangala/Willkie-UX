@@ -1,0 +1,43 @@
+<nav class="header">
+  <mat-toolbar>
+      <a href="javascript:void(0);" (click)="linkOnClick('/')" class="header-logo">
+        <img src="../../assets/Willkie_logo_white.png" alt="Willkie Logo"/>
+      </a>
+  </mat-toolbar>
+</nav>
+<section class="main">
+  <ng-content></ng-content>
+</section>
+<!-- would use valid angular routes in this footer in a real site -->
+<section class="footer">
+    <ul>
+          <li><a href="javascript:void(0);" (click)="linkOnClick('/')">Contact Us</a></li>
+          |
+          <li>
+              <a href="javascript:void(0);" (click)="linkOnClick('/')">Legal Notices</a>
+          </li>
+          |
+          <li>
+              <a href="javascript:void(0);" (click)="linkOnClick('/')">Media Inquiries</a>
+          </li>
+          |
+          <li>
+              <a href="javascript:void(0);" (click)="linkOnClick('/')">Privacy Policy</a>
+          </li>
+          |
+          <li>
+              <a href="javascript:void(0);" (click)="linkOnClick('/')">RSS</a>
+          </li>
+          |
+          <li>
+              <a href="javascript:void(0);" (click)="linkOnClick('/')">Sitemap</a>
+          </li>
+          |
+          <li>
+              <a href="javascript:void(0);" (click)="linkOnClick('/')">Attorney Advertising</a>
+          </li>
+    </ul>
+    <div class="copyRight">
+        © 2019 Willkie Farr &amp; Gallagher LLP
+    </div>
+</section>

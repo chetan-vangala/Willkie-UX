@@ -1,0 +1,110 @@
+<div class="home">
+  <h3>Welcome! Select an option below to view client or matter information.</h3>
+  <section class="gridPicker row">
+    <div class="col-xs-6">
+      <button mat-button (click)="toggleGridSelection(true);">View Clients</button>
+    </div>
+    <div class="col-xs-6 matterInfoButton">
+      <button mat-button (click)="toggleGridSelection(false);">View Matters</button>
+    </div>
+  </section>
+  <section class="clientInfoSectionMobile" *ngIf="this.showClientInfo" class="d-block d-md-none">
+    <mat-form-field>
+      <input type="text" matInput [placeholder]="'Find a client'" [formControl]="clientSearchBox" (input)="onClientSearchChange($event.target.value)">
+    </mat-form-field>
+    <div *ngFor="let client of this.clientInfo">
+      <a class="card container-fluid" (click)="clientSelectionChange(client['id'])">
+        <div class="card-body">
+          <h5 class="card-title">{{client['client']}}</h5>
+          <p class="card-text">Click to see details.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section class="clientInfoSection" *ngIf="this.showClientInfo" class="d-none d-md-block">
+    <mat-form-field>
+      <input type="text" matInput [placeholder]="'Find a client'" [formControl]="clientSearchBox" (input)="onClientSearchChange($event.target.value)">
+    </mat-form-field>
+    <p>Select a row below to view client details.</p>
+    <kendo-grid #clientInfoGrid [data]="this.clientInfo" (cellClick)="clientSelectionChange($event.dataItem.id)">
+    	<kendo-grid-column
+          field="client"
+          title="Client"
+    			width="180px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="openInvoices"
+          title="Open Invoices"
+    			width="120px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="billableHours"
+          title="Billable Hours"
+    			width="120px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="totalCollected"
+          title="Total Collected"
+    			width="120px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="unbilledInventory"
+          title="Unbilled Inventory"
+    			width="120px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="unpaidInventory"
+          title="Unpaid Inventory"
+    			width="120px">
+    	</kendo-grid-column>
+    </kendo-grid>
+  </section>
+  <section class="matterInfoSectionMobile" *ngIf="this.showMatterInfo" class="d-block d-md-none">
+    <mat-form-field>
+      <input type="text" matInput [placeholder]="'Find a matter'" [formControl]="matterSearchBox" (input)="onMatterSearchChange($event.target.value)">
+    </mat-form-field>
+    <div *ngFor="let matter of this.matterInfo">
+      <a class="card container-fluid" (click)="matterSelectionChange(matter['id'])">
+        <div class="card-body">
+          <h5 class="card-title">{{matter['matter']}}</h5>
+          <p class="card-text">Click to see details.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section class="matterInfoSection" *ngIf="this.showMatterInfo" class="d-none d-md-block">
+    <mat-form-field>
+      <input type="text" matInput [placeholder]="'Find a matter'" [formControl]="matterSearchBox" (input)="onMatterSearchChange($event.target.value)">
+    </mat-form-field>
+    <p>Select a row below to view matter details.</p>
+    <kendo-grid #matterInfoGrid
+      [data]="this.matterInfo"
+      (cellClick)="matterSelectionChange($event.dataItem.id)">
+    	<kendo-grid-column
+          field="matter"
+          title="Matter"
+    			width="180px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="closingDate"
+          title="Closing Date"
+    			width="120px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="currentBudget"
+          title="Current Budget"
+    			width="120px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="leadAttorney"
+          title="Lead Attorney"
+    			width="120px">
+    	</kendo-grid-column>
+      <kendo-grid-column
+          field="clientAttorney"
+          title="Client Attorney"
+    			width="120px">
+    	</kendo-grid-column>
+    </kendo-grid>
+  </section>
+</div>
